@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26C08F38-877E-49F6-A950-70C61D2543AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnergyRead</RootNamespace>
+    <AssemblyName>EnergyRead</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramFiles)\ABB Industrial IT\Robotics IT\RobotStudio 6.04\Bin\RobotStudio.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramFiles)\ABB Industrial IT\Robotics IT\RobotStudio 6.04\Bin\RobotStudio.exe</StartProgram>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABB.Robotics.Controllers.PC">
+      <HintPath>Resource\ABB.Robotics.Controllers.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.Math">
+      <HintPath>Resource\ABB.Robotics.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.RobotStudio">
+      <HintPath>Resource\ABB.Robotics.RobotStudio.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.RobotStudio.Controllers">
+      <HintPath>Resource\ABB.Robotics.RobotStudio.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.RobotStudio.Environment">
+      <HintPath>Resource\ABB.Robotics.RobotStudio.Environment.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.RobotStudio.Stations">
+      <HintPath>Resource\ABB.Robotics.RobotStudio.Stations.dll</HintPath>
+    </Reference>
+    <Reference Include="ABB.Robotics.RobotStudio.Stations.Forms">
+      <HintPath>Resource\ABB.Robotics.RobotStudio.Stations.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EnergyRead.rsaddin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>XCopy /y "$(TargetPath)" "D:\RobotStudio6.01\Bin\Addins"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

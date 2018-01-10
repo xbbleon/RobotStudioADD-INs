@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RobotStudioAddIn xmlns="urn:abb-robotics-robotstudio-addin"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="urn:abb-robotics-robotstudio-addin file:///C:\Program%20Files%20(x86)\ABB%20Industrial%20IT\Robotics%20IT\SDK\RobotStudio%20SDK%206.04\RobotStudioAddin.xsd"
+                  autoLoad="false">
+
+  <!-- Make sure the ApplicationId is unique -->
+  <ApplicationId>com.mycompany.EnergyRead</ApplicationId>
+  <!--DisplayName>EnergyRead</DisplayName-->
+  <!--DisplayVersion>1.0.0.1</DisplayVersion-->
+  <!--Description>EnergyRead description</Description-->
+  
+  <AddInType>General</AddInType>
+
+  <Assembly>
+    <FileName>EnergyRead.dll</FileName>
+    <!-- In a production scenario, change Path to the directory where your add-in is installed -->
+    <Path>d:\我的文档\visual studio 2015\Projects\EnergyRead\EnergyRead\bin\Debug</Path>
+    <Path>d:\我的文档\visual studio 2015\Projects\EnergyRead\EnergyRead\bin\Release</Path>
+  </Assembly>
+
+  <!-- By default, the minimum host version is equal to the SDK version -->
+  <!-- You can change this if your add-in supports older RobotStudio versions -->
+  <MinimumHostVersion>6.04</MinimumHostVersion>
+  <Dependencies>Station</Dependencies>
+  <!-- Change Platform to x86 if your add-in uses any native x86 components -->
+  <Platform>Any</Platform>
+
+</RobotStudioAddIn>
